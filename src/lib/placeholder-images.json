@@ -1,0 +1,70 @@
+{
+  "placeholderImages": [
+    {
+      "id": "team-1",
+      "description": "Portrait of the founder",
+      "imageUrl": "https://picsum.photos/seed/t1/120/120",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "team-2",
+      "description": "Portrait of the lead developer",
+      "imageUrl": "https://picsum.photos/seed/t2/120/120",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "team-3",
+      "description": "Portrait of the UX/UI designer",
+      "imageUrl": "https://picsum.photos/seed/t3/120/120",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "blog-1",
+      "description": "Abstract image for AI video blog post",
+      "imageUrl": "https://picsum.photos/seed/b1/600/400",
+      "imageHint": "abstract art"
+    },
+    {
+      "id": "blog-2",
+      "description": "Image for custom AI agents blog post",
+      "imageUrl": "https://picsum.photos/seed/b2/600/400",
+      "imageHint": "robot technology"
+    },
+    {
+      "id": "blog-3",
+      "description": "Image for design principles blog post",
+      "imageUrl": "https://picsum.photos/seed/b3/600/400",
+      "imageHint": "design wireframe"
+    },
+    {
+      "id": "blog-4",
+      "description": "Image for US election AI blog post",
+      "imageUrl": "https://picsum.photos/seed/b4/600/400",
+      "imageHint": "USA flag technology"
+    },
+    {
+      "id": "blog-5",
+      "description": "Image for Nepal monsoon blog post",
+      "imageUrl": "https://picsum.photos/seed/b5/600/400",
+      "imageHint": "Nepal landscape mountains"
+    },
+    {
+      "id": "blog-6",
+      "description": "Image for future of LLMs blog post",
+      "imageUrl": "https://picsum.photos/seed/b6/600/400",
+      "imageHint": "futuristic AI brain"
+    },
+    {
+      "id": "blog-7",
+      "description": "Image for AI in healthcare blog post",
+      "imageUrl": "https://picsum.photos/seed/b7/600/400",
+      "imageHint": "healthcare technology"
+    },
+    {
+      "id": "blog-8",
+      "description": "Image for quantum computing and AI blog post",
+      "imageUrl": "https://picsum.photos/seed/b8/600/400",
+      "imageHint": "quantum computer"
+    }
+  ]
+}

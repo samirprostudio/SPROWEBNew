@@ -1,0 +1,15 @@
+diff --git a/node_modules/@google-cloud/functions-framework/package.json b/node_modules/@google-cloud/functions-framework/package.json
+index 5313626..06a1476 100644
+--- a/node_modules/@google-cloud/functions-framework/package.json
++++ b/node_modules/@google-cloud/functions-framework/package.json
+@@ -62,7 +62,12 @@
+     "body-parser": "^1.18.3",
+     "express": "^4.16.4",
+     "minimist": "^1.2.5"
+-  }
++  },
++ "browser": {
++    "node-forge": false,
++    "string_decoder": false
++  } 
+ }
