@@ -30,6 +30,26 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    // These modules are not used in the client-side bundle.
+    if (!isServer) {
+        config.resolve.fallback = {
+            ...config.resolve.fallback,
+            'fs': false,
+            'net': false,
+            'tls': false,
+        };
+    }
+    // Fix for handlebars
+    config.externals.push({
+        'handlebars': 'commonjs handlebars'
+    });
+    // Fix for opentelemetry
+    config.externals.push({
+        '@opentelemetry/instrumentation': 'commonjs @opentelemetry/instrumentation'
+    })
+    return config;
+  },
 };
 
 export default nextConfig;
