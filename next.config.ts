@@ -40,14 +40,11 @@ const nextConfig: NextConfig = {
             'tls': false,
         };
     }
-    // Fix for handlebars
+    // Fix for handlebars and opentelemetry during build
     config.externals.push({
-        'handlebars': 'commonjs handlebars'
-    });
-    // Fix for opentelemetry
-    config.externals.push({
+        'handlebars': 'commonjs handlebars',
         '@opentelemetry/instrumentation': 'commonjs @opentelemetry/instrumentation'
-    })
+    });
     return config;
   },
 };
