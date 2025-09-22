@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <title>SAMIR PRO - AI Powered Solutions</title>
+        <title>SAMIR PRO STUDIO - A Creative Content Creator & Video Production Agency</title>
         <meta name="description" content="Welcome to SAMIR PRO. We build innovative AI-powered solutions." />
       </head>
       <body className={cn('min-h-screen bg-background font-body antialiased', inter.variable, spaceGrotesk.variable, orbitron.variable)}>
