@@ -33,7 +33,7 @@ export function Header() {
           <TiltCard>
             <Image src="/logo.png" alt="SAMIR PRO STUDIO Logo" width={32} height={32} className="h-8 w-8" />
           </TiltCard>
-          <span className="font-bold font-headline sm:inline-block">
+          <span className="font-orbitron font-bold sm:inline-block">
             SAMIR PRO STUDIO
           </span>
         </Link>
@@ -68,7 +68,7 @@ export function Header() {
                     <div className="flex items-center mb-8">
                       <Link href="/" className="mr-6 flex items-center space-x-2">
                         <Image src="/logo.png" alt="SAMIR PRO STUDIO Logo" width={32} height={32} className="h-8 w-8" />
-                        <span className="font-bold font-headline">SAMIR PRO STUDIO</span>
+                        <span className="font-orbitron font-bold">SAMIR PRO STUDIO</span>
                       </Link>
                     </div>
                     <div className="flex flex-col space-y-4">
