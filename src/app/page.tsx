@@ -1,7 +1,8 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getBlogPosts, getLatestVideos } from '@/lib/data';
-import { ArrowRight, Bot, Code, Video, Youtube, Wand2 } from 'lucide-react';
+import { ArrowRight, Bot, Code, Video, Youtube, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import TiltCard from '@/components/tilt-card';
@@ -17,12 +18,17 @@ export default function Home() {
         <section id="hero" className="w-full py-20 md:py-32 lg:py-40 xl:py-48">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    SAMIR PRO: A Creative Content Creator Agency
-                  </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+              <div className="flex flex-col justify-center space-y-4 text-center items-center">
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <h1 className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none">
+                      SAMIR PRO STUDIO
+                    </h1>
+                    <p className="font-headline text-xl text-muted-foreground sm:text-2xl md:text-3xl">
+                      A Creative Content Creator &amp; Production Agency
+                    </p>
+                  </div>
+                  <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
                     We bring your ideas to life with stunning visuals and engaging narratives. Explore our services and see how we can build the future of content together.
                   </p>
                 </div>
@@ -33,23 +39,18 @@ export default function Home() {
                       <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
-                  <Button asChild size="lg" variant="secondary" className="transition-transform transform hover:scale-105">
-                    <Link href="/brand-story-generator">
-                      Use Brand Story AI
-                    </Link>
-                  </Button>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center pt-8 lg:pt-0">
                 <TiltCard>
-                  <Image src="/logo.png" alt="SAMIR PRO STUDIO Logo" width={250} height={250} className="h-48 w-48" />
+                  <Image src="/logo.png" alt="SAMIR PRO STUDIO Logo" width={320} height={320} className="h-64 w-64 md:h-80 md:w-80" />
                 </TiltCard>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+        <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-card/80 backdrop-blur-sm">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -60,56 +61,73 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-4 mt-12">
-              <TiltCard>
-                <Card className="h-full">
-                  <CardHeader>
-                    <Video className="h-10 w-10 text-primary mb-2" />
-                    <CardTitle className="font-headline">AI Video Generation</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">Our advanced AI model can create stunning, high-quality videos from simple text prompts, complete with realistic motion and voiceovers.</p>
-                  </CardContent>
-                </Card>
-              </TiltCard>
-              <TiltCard>
-                <Card className="h-full">
-                  <CardHeader>
-                    <Bot className="h-10 w-10 text-primary mb-2" />
-                    <CardTitle className="font-headline">Custom AI Agents</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">We build and train custom AI agents tailored to your business needs, automating tasks and providing intelligent insights.</p>
-                  </CardContent>
-                </Card>
-              </TiltCard>
-              <TiltCard>
-                <Card className="h-full">
-                  <CardHeader>
-                    <Code className="h-10 w-10 text-primary mb-2" />
-                    <CardTitle className="font-headline">Web & App Development</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">Our team of expert developers creates responsive, high-performance websites and applications that deliver seamless user experiences.</p>
-                  </CardContent>
-                </Card>
-              </TiltCard>
-              <TiltCard>
-                <Card className="h-full">
-                  <CardHeader>
-                    <Wand2 className="h-10 w-10 text-primary mb-2" />
-                    <CardTitle className="font-headline">Use Trending AI for Free</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">Experiment with the latest Gemini AI model. Chat, generate ideas, and enhance your prompts for free.</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button asChild className="w-full">
-                      <Link href="/ai-chat">Access Now</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </TiltCard>
+            <div className="mx-auto grid max-w-6xl items-stretch gap-8 mt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <TiltCard className="transition-transform active:scale-[0.98] hover:scale-105">
+                        <Card className="h-full flex flex-col bg-card/50">
+                            <CardHeader>
+                                <Video className="h-10 w-10 text-primary mb-2" />
+                                <CardTitle className="font-headline">AI Video Generation</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <p className="text-muted-foreground">Our advanced AI can create stunning, high-quality videos from simple text prompts, complete with realistic motion and voiceovers.</p>
+                            </CardContent>
+                        </Card>
+                    </TiltCard>
+                    <TiltCard className="transition-transform active:scale-[0.98] hover:scale-105">
+                        <Card className="h-full flex flex-col bg-card/50">
+                            <CardHeader>
+                                <Bot className="h-10 w-10 text-primary mb-2" />
+                                <CardTitle className="font-headline">Custom AI Agents</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <p className="text-muted-foreground">We build and train custom AI agents tailored to your business needs, automating tasks and providing intelligent insights.</p>
+                            </CardContent>
+                        </Card>
+                    </TiltCard>
+                     <TiltCard className="transition-transform active:scale-[0.98] hover:scale-105">
+                        <Card className="h-full flex flex-col bg-card/50">
+                            <CardHeader>
+                                <Code className="h-10 w-10 text-primary mb-2" />
+                                <CardTitle className="font-headline">Web Development</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <p className="text-muted-foreground">We design and build modern, responsive, and high-performance websites and web applications tailored to your brand.</p>
+                            </CardContent>
+                        </Card>
+                    </TiltCard>
+                     <TiltCard className="transition-transform active:scale-[0.98] hover:scale-105">
+                        <Card className="h-full flex flex-col bg-card/50">
+                            <CardHeader>
+                                <Youtube className="h-10 w-10 text-primary mb-2" />
+                                <CardTitle className="font-headline">YouTube Automation</CardTitle>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <p className="text-muted-foreground">Scale your content creation with our AI-powered YouTube automation services, from scripting to video production.</p>
+                            </CardContent>
+                        </Card>
+                    </TiltCard>
+                </div>
+                <div className="flex justify-center mt-8">
+                    <div className="w-full sm:w-1/2 lg:w-1/4">
+                        <TiltCard className="transition-transform active:scale-[0.98] hover:scale-105">
+                            <Card className="h-full flex flex-col text-center bg-card/50">
+                                <CardHeader>
+                                    <Sparkles className="h-10 w-10 text-primary mb-2 mx-auto" />
+                                    <CardTitle className="font-headline">Create Custom AI Videos</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    <p className="text-muted-foreground">Get custom AI-generated videos for your YouTube channel or social media. Tell us your idea, and we'll bring it to life.</p>
+                                </CardContent>
+                                <CardFooter className="flex-col">
+                                    <Button asChild className="w-full">
+                                        <Link href="/order">Order Now</Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card>
+                        </TiltCard>
+                    </div>
+                </div>
             </div>
           </div>
         </section>
@@ -127,8 +145,8 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
               {latestVideos.map((video) => (
-                <TiltCard key={video.id}>
-                  <Card className="h-full flex flex-col">
+                <TiltCard key={video.id} className="transition-transform active:scale-[0.98] hover:scale-105">
+                  <Card className="h-full flex flex-col bg-card/50">
                     <div className="aspect-video w-full overflow-hidden rounded-t-lg">
                       <iframe
                         src={`https://www.youtube.com/embed/${video.youtubeId}`}
@@ -167,7 +185,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="blog" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+        <section id="blog" className="w-full py-12 md:py-24 lg:py-32 bg-card/80 backdrop-blur-sm">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -180,8 +198,8 @@ export default function Home() {
             </div>
             <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {latestPosts.map((post) => (
-                <TiltCard key={post.slug}>
-                  <Card className="overflow-hidden h-full">
+                <TiltCard key={post.slug} className="transition-transform active:scale-[0.98] hover:scale-105">
+                  <Card className="overflow-hidden h-full bg-card/50">
                     <Link href={`/blog/${post.slug}`}>
                       <Image
                         src={post.image}
@@ -236,3 +254,6 @@ export default function Home() {
     </div>
   );
 }
+
+    
+    

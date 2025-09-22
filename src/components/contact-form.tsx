@@ -1,10 +1,13 @@
+
 'use client';
 
+import 'react-phone-number-input/style.css';
 import { useEffect, useRef, useState, useTransition } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useRouter } from 'next/navigation';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 
 import { submitContactForm, type ContactFormState } from '@/lib/actions';
 import { Input } from '@/components/ui/input';
@@ -18,7 +21,10 @@ import { Loader2 } from 'lucide-react';
 const ContactFormSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email.'),
-  whatsapp: z.string().optional(),
+  whatsapp: z.string().optional().refine(
+    (value) => !value || isValidPhoneNumber(value), 
+    'Please enter a valid phone number.'
+  ),
   inquiry: z.string().min(1, 'Please select an inquiry type.'),
   customInquiry: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters.'),
@@ -148,13 +154,20 @@ export default function ContactForm() {
         {errors.email && <p className="text-destructive text-sm mt-1">{errors.email.message}</p>}
       </div>
       <div>
-        <Input
-          type="text"
-          placeholder="WhatsApp Number (Optional)"
-          {...register('whatsapp')}
-          className={cn(
-            'transition-all transform hover:scale-105 hover:border-accent',
-            errors.whatsapp && 'border-destructive'
+        <Controller
+          name="whatsapp"
+          control={control}
+          render={({ field }) => (
+            <PhoneInput
+              {...field}
+              placeholder="WhatsApp Number (Optional)"
+              international
+              defaultCountry="US"
+              className={cn(
+                'phone-input-dark flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm transition-all transform hover:scale-105 hover:border-accent',
+                 errors.whatsapp && 'border-destructive'
+              )}
+            />
           )}
         />
         {errors.whatsapp && <p className="text-destructive text-sm mt-1">{errors.whatsapp.message}</p>}

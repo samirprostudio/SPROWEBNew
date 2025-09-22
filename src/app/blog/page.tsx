@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getBlogPosts } from '@/lib/data';
 import Image from 'next/image';
@@ -22,7 +23,7 @@ export default function BlogPage() {
       <main>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <Card key={post.slug} className="flex flex-col overflow-hidden transition-all transform hover:scale-105 hover:border-accent">
+            <Card key={post.slug} className="flex flex-col overflow-hidden transition-all transform hover:scale-105 hover:border-accent bg-card/80 backdrop-blur-sm active:scale-[0.98]">
               <Link href={`/blog/${post.slug}`} aria-label={post.title}>
                 <Image
                   src={post.image}

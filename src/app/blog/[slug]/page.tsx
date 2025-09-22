@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import { getBlogPosts, getBlogPostBySlug } from '@/lib/data';
 import Image from 'next/image';
@@ -44,7 +45,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <article className="container max-w-4xl py-12 md:py-24">
+    <article className="container max-w-4xl py-12 md:py-24 bg-card/80 backdrop-blur-sm rounded-lg my-12">
       <div className="mb-8">
         <Button asChild variant="ghost">
           <Link href="/blog">

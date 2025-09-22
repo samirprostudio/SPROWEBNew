@@ -1,3 +1,4 @@
+
 'use client';
 
 import type { Metadata } from 'next';
@@ -8,6 +9,8 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { MagicCursor } from '@/components/magic-cursor';
 import { Orbitron } from 'next/font/google';
+import FireBackground from '@/components/fire-background';
+
 
 const orbitron = Orbitron({
   subsets: ['latin'],
@@ -34,8 +37,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('min-h-screen bg-background font-body antialiased', orbitron.variable)}>
+        <FireBackground />
         <MagicCursor />
-        <div className="relative flex min-h-dvh flex-col bg-background">
+        <div className="relative flex min-h-dvh flex-col bg-transparent backdrop-blur-sm">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
@@ -45,3 +49,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+    

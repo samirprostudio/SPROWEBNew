@@ -10,7 +10,21 @@ export const metadata: Metadata = {
     description: 'Thank you for contacting SAMIR PRO. We have received your message.',
 };
 
-export default function ThankYouPage() {
+type ThankYouPageProps = {
+    searchParams?: {
+        from?: string;
+    };
+};
+
+export default function ThankYouPage({ searchParams }: ThankYouPageProps) {
+  const isFromOrder = searchParams?.from === 'order';
+
+  const titleText = isFromOrder ? "Order Received!" : "Thank You!";
+  const descriptionText = isFromOrder
+    ? "Your order has been successfully submitted. Our team will review it and get back to you as soon as possible."
+    : "Your message has been successfully sent. Our team will review it and get back to you as soon as possible.";
+
+
   return (
     <div className="container flex items-center justify-center min-h-[calc(100vh-14rem)] py-12">
       <Card className="max-w-2xl w-full text-center p-4 sm:p-8 shadow-2xl bg-card/80 backdrop-blur-sm">
@@ -20,11 +34,11 @@ export default function ThankYouPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <CardTitle className="font-headline text-2xl md:text-4xl">Thank You!</CardTitle>
+          <CardTitle className="font-headline text-2xl md:text-4xl">{titleText}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <p className="text-muted-foreground text-base md:text-lg">
-            Your message has been successfully sent. Our team will review it and get back to you as soon as possible.
+            {descriptionText}
           </p>
           <div className="bg-muted/50 p-4 rounded-lg">
             <h3 className="font-headline text-lg font-semibold mb-2">While you wait...</h3>
